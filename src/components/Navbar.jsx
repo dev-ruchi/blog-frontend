@@ -4,9 +4,9 @@ import { Navbar as BSNavbar, Container } from "react-bootstrap";
 
 function Navbar() {
   return (
-    <BSNavbar className='mb-5'>
+    <BSNavbar className='mb-5' bg='dark' variant='dark'>
       <Container>
-        <BSNavbar.Brand href="#home">BS Navbar with text</BSNavbar.Brand>
+        <BSNavbar.Brand href="#home">MyAwesomeBlog</BSNavbar.Brand>
         <BSNavbar.Toggle />
         <BSNavbar.Collapse className="justify-content-end">
           <BSNavbar.Text>
