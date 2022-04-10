@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Card, Col, Row } from 'react-bootstrap';
+import { truncate } from "../utils/string";
 
 function PostList() {
 
@@ -20,12 +21,12 @@ function PostList() {
       <Row>
         {posts.map(post => {
           return (
-            <Col xs='12' md='4' lg='3'>
-              <Card style={{ width: '18rem' }}>
+            <Col xs='12' md='4' lg='3' className='mb-4'>
+              <Card>
                 <Card.Body>
                   <Card.Title>{post.title}</Card.Title>
                   <Card.Text>
-                    {post.body}
+                    {truncate(post.body, 120)}
                   </Card.Text>
                 </Card.Body>
               </Card>
