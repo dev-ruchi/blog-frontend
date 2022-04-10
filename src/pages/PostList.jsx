@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Card, Col, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { truncate } from "../utils/string";
 
 function PostList() {
@@ -22,14 +23,16 @@ function PostList() {
         {posts.map(post => {
           return (
             <Col key={post._id} xs='12' md='4' lg='3' className='mb-4'>
-              <Card>
-                <Card.Body>
-                  <Card.Title>{post.title}</Card.Title>
-                  <Card.Text>
-                    {truncate(post.body, 120)}
-                  </Card.Text>
-                </Card.Body>
-              </Card>
+              <Link to={`/posts/${post.slug}`}>
+                <Card>
+                  <Card.Body>
+                    <Card.Title>{post.title}</Card.Title>
+                    <Card.Text>
+                      {truncate(post.body, 120)}
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </Link>
             </Col>
           )
         })}
