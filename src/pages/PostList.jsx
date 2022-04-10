@@ -21,7 +21,7 @@ function PostList() {
       <Row>
         {posts.map(post => {
           return (
-            <Col xs='12' md='4' lg='3' className='mb-4'>
+            <Col key={post._id} xs='12' md='4' lg='3' className='mb-4'>
               <Card>
                 <Card.Body>
                   <Card.Title>{post.title}</Card.Title>
