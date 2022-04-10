@@ -9,7 +9,7 @@ function PostList() {
 
   useEffect(function () {
 
-    fetch("http://localhost:8000/posts")
+    fetch(`${import.meta.env.VITE_BASE_URL}/posts`)
       .then(response => response.json())
       .then(result => setPosts(result))
       .catch(error => console.log('error', error));

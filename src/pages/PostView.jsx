@@ -8,7 +8,7 @@ function PostView() {
   const [failed, setFailed] = useState(false)
 
   useEffect(function () {
-    fetch(`http://localhost:8000/posts/${slug}`)
+    fetch(`${import.meta.env.VITE_BASE_URL}/posts/${slug}`)
       .then(response => response.json())
       .then(result => setPost(result))
       .catch(error => {
