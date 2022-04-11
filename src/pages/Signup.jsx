@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
 import { Form, Button } from 'react-bootstrap'
-import { useNavigate } from 'react-router-dom';
 
 function Signup() {
 
-  const navigate = useNavigate();
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -26,7 +24,7 @@ function Signup() {
       .then(response => response.json())
       .then(result => {
         localStorage.setItem('token', result.token)
-        navigate("/")
+        window.location = '/'
       })
       .catch(error => console.log('error', error));
   }
