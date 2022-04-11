@@ -9,3 +9,7 @@ export function user() {
 
   return jwtDecode(localStorage.getItem('token'))
 }
+
+export function token() {
+  return localStorage.getItem('token')
+}

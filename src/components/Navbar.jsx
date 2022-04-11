@@ -18,6 +18,7 @@ function Navbar() {
         <BSNavbar.Collapse className="justify-content-end">
           {user()
             ? <>
+              <Nav.Link href="/posts/create">Create post</Nav.Link>
               <Button onClick={logOut}>Log out</Button>
             </>
             : <>
