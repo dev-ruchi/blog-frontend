@@ -23,6 +23,12 @@ function Signup() {
     })
       .then(response => response.json())
       .then(result => {
+        if (result.error) {
+          console.log(result)
+          alert(result.error)
+          return
+        }
+
         localStorage.setItem('token', result.token)
         window.location = '/'
       })

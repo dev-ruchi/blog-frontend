@@ -22,17 +22,17 @@ function PostList() {
       <Row>
         {posts.map(post => {
           return (
-            <Col key={post._id} xs='12' md='4' lg='3' className='mb-4'>
-              <Link to={`/posts/${post.slug}`}>
-                <Card>
-                  <Card.Body>
+            <Col key={post._id} xs='12' md='4' lg='3' className='mb-4 d-flex align-items-stretch'>
+              <Card>
+                <Card.Body>
+                  <Link to={`/posts/${post.slug}`} style={{ textDecoration: 'none' }}>
                     <Card.Title>{post.title}</Card.Title>
-                    <Card.Text>
-                      {truncate(post.body, 120)}
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-              </Link>
+                  </Link>
+                  <Card.Text>
+                    {truncate(post.body, 120)}
+                  </Card.Text>
+                </Card.Body>
+              </Card>
             </Col>
           )
         })}

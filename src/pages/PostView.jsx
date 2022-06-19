@@ -25,9 +25,11 @@ function PostView() {
     post ?
       <Row>
         <Col xs='12' md='8' lg='6' className='offset-md-2 offset-lg-3'>
-          <h1 className='bg-success text-white p-5 mb-5 rounded'>{post.title}</h1>
-          <p className='mb-5 fs-5'>{post.body}</p>
-          <p className='text-primary'>{post.user.name}</p>
+          <h1 className='bg-success text-white p-5 mb-4 rounded'>{post.title}</h1>
+          <hr />
+          <p className='text-primary'><span className='text-black'>Author </span>{post.user.name}</p>
+          <hr />
+          <p className='fs-5 text-justify'>{post.body}</p>
         </Col>
       </Row>
       :

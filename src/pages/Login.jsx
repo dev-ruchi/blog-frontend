@@ -20,10 +20,17 @@ function Login() {
     })
       .then(response => response.json())
       .then(result => {
+        if (result.error) {
+          alert(result.error)
+          return
+        }
+
         localStorage.setItem('token', result.token)
         window.location = '/'
       })
-      .catch(error => console.log('error', error));
+      .catch(error => {
+        console.log('error', error)
+      });
   }
 
   return (
