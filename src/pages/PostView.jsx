@@ -15,7 +15,7 @@ function PostView() {
     fetch(`${import.meta.env.VITE_BASE_URL}/posts/${slug}`)
       .then(response => {
         if (!response.ok) setFailed(true)
-        else response.json()
+        else return response.json()
       })
       .then(result => setPost(result))
       .catch(error => {

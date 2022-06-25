@@ -39,7 +39,7 @@ function PostCreate() {
             }
           })
         } else {
-          response.json()
+          return response.json()
         }
       })
       .then(post => navigate(`/posts/${post.slug}`))
