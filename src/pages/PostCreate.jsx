@@ -29,7 +29,19 @@ function PostCreate() {
       body: raw,
       redirect: 'follow'
     })
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          response.json().then(body => {
+            if (response.status === 422) {
+              alert(body.error)
+            } else {
+              alert('Something went wrong.')
+            }
+          })
+        } else {
+          response.json()
+        }
+      })
       .then(post => navigate(`/posts/${post.slug}`))
       .catch(error => console.log('error', error));
   }

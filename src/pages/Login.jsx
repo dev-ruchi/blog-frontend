@@ -23,10 +23,10 @@ function Login() {
         if (result.error) {
           alert(result.error)
           return
+        } else {
+          localStorage.setItem('token', result.token)
+          window.location = '/'
         }
-
-        localStorage.setItem('token', result.token)
-        window.location = '/'
       })
       .catch(error => {
         console.log('error', error)
